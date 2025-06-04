@@ -1,4 +1,4 @@
-# Maharashtra Weather Report 🌤️
+#Weather Report 🌤️
 
 ## Project Overview
 
