@@ -1,2 +1,24 @@
-# weather-report-simple
-A static weather report webpage displaying live and historical weather data for major cities in Maharashtra. Created using only HTML, CSS, and JavaScript (no external libraries). Includes real-time clock, well-styled tables, and responsive formatting for readability.
+# Maharashtra Weather Report 🌤️
+
+## Project Overview
+
+This project displays a static **weather report dashboard** for key cities in **Maharashtra**, India. It features tables for:
+- **Live Weather** (Temperature, Humidity, Wind)
+- **Yesterday's Weather** (Highs, Lows, Wind)
+- **Top Hottest Cities** ranked by temperature
+
+🔹 Built using **pure HTML, CSS, and JavaScript**  
+🔹 Includes **live date and time**  
+🔹 Responsive and neatly styled tables  
+🔹 Fully static – does not fetch real API data (sample only)
+
+---
+
+## 👨‍💻 Author
+
+**Ashish Sadavarti**  
+📬 ashishsadavarti1999@gmail.com
+
+
+
+
