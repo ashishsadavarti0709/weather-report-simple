@@ -1,0 +1,172 @@
+<!-- 
+    Name: Ashish Sadavarti
+    Project: Weather Report
+    Description: Displays live and past weather data for cities in Maharashtra.
+    Copyright: All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Report - Maharashtra</title>
+    <style>
+        /* General body styling */
+        body {
+            background-color: #98AFC7;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        /* Headings styling */
+        h1, h2 {
+            text-align: center;
+            color: white;
+        }
+
+        /* Table styling */
+        table {
+            margin: 20px auto;
+            background-color: #41627E;
+            border: 2px solid #000;
+            border-collapse: separate;
+            border-spacing: 10px;
+            width: 80%;
+            color: white;
+        }
+
+        /* Table header (th) styling */
+        th {
+            background-color: pink;
+            color: #41627E;
+            padding: 10px;
+        }
+
+        /* Table data cell (td) styling */
+        td {
+            background-color: #98AFC7;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* First column (City names) styling */
+        td:first-child {
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        /* Date and time display */
+        #datetime {
+            text-align: center;
+            font-size: 18px;
+            color: white;
+            margin-top: -10px;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            color: white;
+            background-color: #41627E;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Title -->
+    <h1>Weather Report - Maharashtra</h1>
+
+    <!-- Live Date and Time -->
+    <div id="datetime"></div>
+
+    <!-- Section: Live Weather -->
+    <h2>Live Weather (Sample Data)</h2>
+    <table>
+        <tr>
+            <th>CITY</th>
+            <th>TEMPERATURE (°C)</th>
+            <th>HUMIDITY (%)</th>
+            <th>WIND</th>
+        </tr>
+        <tr><td>Mumbai</td><td>31</td><td>70</td><td>Southwest</td></tr>
+        <tr><td>Pune</td><td>29</td><td>65</td><td>West</td></tr>
+        <tr><td>Nagpur</td><td>36</td><td>40</td><td>East</td></tr>
+        <tr><td>Nashik</td><td>28</td><td>50</td><td>South</td></tr>
+        <tr><td>Aurangabad</td><td>30</td><td>55</td><td>South</td></tr>
+        <tr><td>Latur</td><td>32</td><td>45</td><td>West</td></tr>
+        <tr><td>Kolhapur</td><td>27</td><td>60</td><td>Southwest</td></tr>
+        <tr><td>Amravati</td><td>34</td><td>50</td><td>North</td></tr>
+        <tr><td>Solapur</td><td>35</td><td>42</td><td>South</td></tr>
+        <tr><td>Jalgaon</td><td>33</td><td>48</td><td>East</td></tr>
+    </table>
+
+    <!-- Section: Yesterday's Weather -->
+    <h2>Yesterday's Weather</h2>
+    <table>
+        <tr>
+            <th>CITY</th>
+            <th>HIGH (°C)</th>
+            <th>LOW (°C)</th>
+            <th>WIND</th>
+        </tr>
+        <tr><td>Nagpur</td><td>38</td><td>25</td><td>East</td></tr>
+        <tr><td>Amravati</td><td>37</td><td>26</td><td>North</td></tr>
+        <tr><td>Solapur</td><td>36</td><td>24</td><td>South</td></tr>
+        <tr><td>Jalgaon</td><td>34</td><td>23</td><td>East</td></tr>
+        <tr><td>Latur</td><td>33</td><td>20</td><td>South</td></tr>
+        <tr><td>Mumbai</td><td>32</td><td>26</td><td>Southwest</td></tr>
+        <tr><td>Aurangabad</td><td>30</td><td>20</td><td>South</td></tr>
+        <tr><td>Pune</td><td>30</td><td>22</td><td>West</td></tr>
+        <tr><td>Nashik</td><td>29</td><td>20</td><td>South</td></tr>
+        <tr><td>Kolhapur</td><td>28</td><td>21</td><td>Southwest</td></tr>
+    </table>
+
+    <!-- Section: Top Highest Temperatures -->
+    <h2>Top Highest Temperatures Yesterday (High to Low)</h2>
+    <table>
+        <tr>
+            <th>RANK</th>
+            <th>CITY</th>
+            <th>HIGH TEMP (°C)</th>
+        </tr>
+        <tr><td>1</td><td>Nagpur</td><td>38</td></tr>
+        <tr><td>2</td><td>Amravati</td><td>37</td></tr>
+        <tr><td>3</td><td>Solapur</td><td>36</td></tr>
+        <tr><td>4</td><td>Jalgaon</td><td>34</td></tr>
+        <tr><td>5</td><td>Latur</td><td>33</td></tr>
+        <tr><td>6</td><td>Mumbai</td><td>32</td></tr>
+        <tr><td>7</td><td>Aurangabad</td><td>30</td></tr>
+        <tr><td>7</td><td>Pune</td><td>30</td></tr>
+        <tr><td>9</td><td>Nashik</td><td>29</td></tr>
+        <tr><td>10</td><td>Kolhapur</td><td>28</td></tr>
+    </table>
+
+    <!-- JavaScript to display current date and time -->
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const time = now.toLocaleTimeString();
+            const date = now.toLocaleDateString(undefined, options);
+            document.getElementById("datetime").innerHTML = `${date} - ${time}`;
+        }
+
+        // Call once immediately
+        updateDateTime();
+
+        // Update every second
+        setInterval(updateDateTime, 1000);
+    </script>
+
+    <!-- Footer section -->
+    <footer>
+        Name: Ashish Sadavarti<br>
+        Weather Report<br>
+        &copy; Copyright Reserved
+    </footer>
+
+</body>
+</html>
